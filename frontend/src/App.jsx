@@ -74,78 +74,78 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 p-2 md:p-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-indigo-800 mb-2 flex items-center justify-center space-x-2">
-            <FiLink className="text-4xl" />
+        <header className="text-center mb-6 md:mb-8">
+          <h1 className="text-2xl md:text-4xl font-bold text-indigo-800 mb-2 flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-2">
+            <FiLink className="text-2xl md:text-4xl" />
             <span>Blockchain File Verification</span>
           </h1>
-          <p className="text-lg text-gray-600">Secure, Immutable, Decentralized</p>
+          <p className="text-base md:text-lg text-gray-600">Secure, Immutable, Decentralized</p>
         </header>
 
         {/* Timeline */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
-            <FiClock className="text-xl" />
+        <div className="bg-white rounded-lg shadow-lg p-4 md:p-6 mb-6 md:mb-8">
+          <h3 className="text-lg md:text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
+            <FiClock className="text-lg md:text-xl" />
             <span>Process Timeline</span>
           </h3>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex flex-col items-center text-center">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold transition-colors ${file ? 'bg-green-500' : 'bg-gray-300'}`}>1</div>
-              <p className="mt-2 text-sm">Select File</p>
+              <div className={`w-12 h-12 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white font-bold transition-colors ${file ? 'bg-green-500' : 'bg-gray-300'}`}>1</div>
+              <p className="mt-2 text-sm md:text-sm">Select File</p>
             </div>
-            <div className={`flex-1 h-1 mx-4 transition-colors ${uploadResult ? 'bg-green-400' : 'bg-gray-300'}`}></div>
+            <div className={`w-2 md:flex-1 h-2 md:h-1 md:mx-4 transition-colors ${uploadResult ? 'bg-green-400' : 'bg-gray-300'}`}></div>
             <div className="flex flex-col items-center text-center">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold transition-colors ${uploadResult ? 'bg-green-500' : loadingUpload ? 'bg-yellow-500 animate-pulse' : 'bg-gray-300'}`}>2</div>
-              <p className="mt-2 text-sm">Upload</p>
+              <div className={`w-12 h-12 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white font-bold transition-colors ${uploadResult ? 'bg-green-500' : loadingUpload ? 'bg-yellow-500 animate-pulse' : 'bg-gray-300'}`}>2</div>
+              <p className="mt-2 text-sm md:text-sm">Upload</p>
             </div>
-            <div className={`flex-1 h-1 mx-4 transition-colors ${verifyResult ? 'bg-green-400' : 'bg-gray-300'}`}></div>
+            <div className={`w-2 md:flex-1 h-2 md:h-1 md:mx-4 transition-colors ${verifyResult ? 'bg-green-400' : 'bg-gray-300'}`}></div>
             <div className="flex flex-col items-center text-center">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold transition-colors ${verifyResult ? 'bg-green-500' : loadingVerify ? 'bg-yellow-500 animate-pulse' : 'bg-gray-300'}`}>3</div>
-              <p className="mt-2 text-sm">Verify</p>
+              <div className={`w-12 h-12 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white font-bold transition-colors ${verifyResult ? 'bg-green-500' : loadingVerify ? 'bg-yellow-500 animate-pulse' : 'bg-gray-300'}`}>3</div>
+              <p className="mt-2 text-sm md:text-sm">Verify</p>
             </div>
           </div>
         </div>
 
         {/* Stats */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
-            <FiBarChart2 className="text-xl" />
+        <div className="bg-white rounded-lg shadow-lg p-4 md:p-6 mb-6 md:mb-8">
+          <h3 className="text-lg md:text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
+            <FiBarChart2 className="text-lg md:text-xl" />
             <span>Statistics</span>
           </h3>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="text-center p-4 bg-blue-50 rounded-lg">
-              <div className="text-2xl font-bold text-blue-600">{stats.uploads}</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="text-center p-6 md:p-4 bg-blue-50 rounded-lg min-h-20 md:min-h-0 flex flex-col justify-center">
+              <div className="text-2xl md:text-xl font-bold text-blue-600">{stats.uploads}</div>
               <div className="text-sm text-gray-600">Uploads</div>
             </div>
-            <div className="text-center p-4 bg-green-50 rounded-lg">
-              <div className="text-2xl font-bold text-green-600">{stats.verifications}</div>
+            <div className="text-center p-6 md:p-4 bg-green-50 rounded-lg min-h-20 md:min-h-0 flex flex-col justify-center">
+              <div className="text-2xl md:text-xl font-bold text-green-600">{stats.verifications}</div>
               <div className="text-sm text-gray-600">Verifications</div>
             </div>
-            <div className="text-center p-4 bg-purple-50 rounded-lg">
-              <div className="text-2xl font-bold text-purple-600">{stats.successes}</div>
+            <div className="text-center p-6 md:p-4 bg-purple-50 rounded-lg min-h-20 md:min-h-0 flex flex-col justify-center">
+              <div className="text-2xl md:text-xl font-bold text-purple-600">{stats.successes}</div>
               <div className="text-sm text-gray-600">Successes</div>
             </div>
           </div>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-8">
-          <div className="space-y-6">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
-                <FiFolder className="text-xl" />
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
+          <div className="space-y-4 md:space-y-6">
+            <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+              <h3 className="text-lg md:text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
+                <FiFolder className="text-lg md:text-xl" />
                 <span>File Input</span>
               </h3>
               <FileInput onChange={handleFileChange} />
               {file && <p className="mt-2 text-sm text-gray-600">Selected: {file.name}</p>}
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
-                <FiSettings className="text-xl" />
+            <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+              <h3 className="text-lg md:text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
+                <FiSettings className="text-lg md:text-xl" />
                 <span>Actions</span>
               </h3>
               <ActionButtons
@@ -157,10 +157,10 @@ export default function App() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-white rounded-lg shadow-lg p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
-                <FiClipboard className="text-xl" />
+          <div className="space-y-4 md:space-y-6">
+            <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+              <h3 className="text-lg md:text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
+                <FiClipboard className="text-lg md:text-xl" />
                 <span>Results</span>
               </h3>
               <div className="space-y-4">
@@ -172,23 +172,23 @@ export default function App() {
         </div>
 
         {/* History */}
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <h3 className="text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
-            <FiFileText className="text-xl" />
+        <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+          <h3 className="text-lg md:text-xl font-semibold mb-4 text-gray-800 flex items-center space-x-2">
+            <FiFileText className="text-lg md:text-xl" />
             <span>History</span>
           </h3>
-          <div className="max-h-40 overflow-y-auto">
+          <div className="max-h-48 md:max-h-40 overflow-y-auto">
             {history.length === 0 ? (
-              <p className="text-gray-500">No actions yet.</p>
+              <p className="text-gray-500 text-base md:text-sm">No actions yet.</p>
             ) : (
-              <div className="space-y-2">
+              <div className="space-y-3 md:space-y-2">
                 {history.slice(-10).reverse().map((item, index) => (
-                  <div key={index} className="flex items-center justify-between p-2 bg-gray-50 rounded">
+                  <div key={index} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-3 md:p-2 bg-gray-50 rounded space-y-2 sm:space-y-0">
                     <div className="flex items-center space-x-2">
-                      <span className={`w-3 h-3 rounded-full ${item.type === 'upload' ? 'bg-blue-500' : item.success ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                      <span className="text-sm">{item.type === 'upload' ? 'Uploaded' : 'Verified'} {item.file}</span>
+                      <span className={`w-4 h-4 md:w-3 md:h-3 rounded-full ${item.type === 'upload' ? 'bg-blue-500' : item.success ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                      <span className="text-base md:text-sm">{item.type === 'upload' ? 'Uploaded' : 'Verified'} {item.file}</span>
                     </div>
-                    <span className="text-xs text-gray-500">{item.timestamp.toLocaleTimeString()}</span>
+                    <span className="text-sm md:text-xs text-gray-500">{item.timestamp.toLocaleTimeString()}</span>
                   </div>
                 ))}
               </div>
